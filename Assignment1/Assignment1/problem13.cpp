@@ -38,6 +38,8 @@ int main()
 
 	int current=fillPaticipant(n-m,k,l);
 	
+	cout<<current;
+
 	cout<<endl<<endl;
 
 	int result=popPaticipant(n,current,l);
@@ -83,9 +85,16 @@ int popPaticipant(int remain,int begin,int step)
 			current=next[current];
 			return current;
 		}
-		remove(current);
-		current=next[current];
-		current=next[current];
+		if (step!=1)
+		{
+			remove(current);
+			current=next[current];
+			current=next[current];
+		}else
+		{
+			remove(before[current]);
+			current=next[current];
+		}
 		--remain;
 		print(current,remain);
 	}
