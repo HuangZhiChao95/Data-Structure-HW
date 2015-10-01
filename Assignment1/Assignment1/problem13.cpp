@@ -37,15 +37,10 @@ int main()
 	before[1]=m;
 
 	int current=fillPaticipant(n-m,k,l);
-	
-	cout<<current;
-
-	cout<<endl<<endl;
 
 	int result=popPaticipant(n,current,l);
 	
 	cout<<result;
-	system("pause");
 	
 }
 
@@ -64,7 +59,6 @@ int fillPaticipant(int remain,int begin,int step)
 		insert(current,n-remain+1);
 		current=next[current];
 		--remain;
-		print(current,n-remain);
 	}
 	return current;
 }
@@ -96,7 +90,6 @@ int popPaticipant(int remain,int begin,int step)
 			current=next[current];
 		}
 		--remain;
-		print(current,remain);
 	}
 	return current;
 }
