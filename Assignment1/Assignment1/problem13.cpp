@@ -11,18 +11,6 @@ int fillPaticipant(int remain,int begin,int step);
 int popPaticipant(int remain,int begin,int step);
 void insert(int current,int index);
 void remove(int current);
-void print(int current,int n)
-{
-	int count=0;
-	while (count<n)
-	{
-		cout<<current<<" ";
-		current=next[current];
-		++count;
-	}
-	cout<<endl;
-
-}
 
 
 int main()
@@ -37,13 +25,12 @@ int main()
 	before[1]=m;
 
 	int current=fillPaticipant(n-m,k,l);
-	
-	cout<<endl<<endl;
+
 
 	int result=popPaticipant(n,current,l);
 	
 	cout<<result;
-	system("pause");
+
 	
 }
 
@@ -62,7 +49,6 @@ int fillPaticipant(int remain,int begin,int step)
 		insert(current,n-remain+1);
 		current=next[current];
 		--remain;
-		print(current,n-remain);
 	}
 	return current;
 }
@@ -87,7 +73,6 @@ int popPaticipant(int remain,int begin,int step)
 		current=next[current];
 		current=next[current];
 		--remain;
-		print(current,remain);
 	}
 	return current;
 }
